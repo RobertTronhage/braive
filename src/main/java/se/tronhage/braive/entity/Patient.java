@@ -2,12 +2,13 @@ package se.tronhage.braive.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import se.tronhage.braive.enums.Organisation;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "patients")
-public class Psychologist {
+public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,10 +23,10 @@ public class Psychologist {
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Psychologist psychologist;
 
-    public Psychologist() {
+    public Patient() {
     }
 
-    public Psychologist(String firstName, String lastName, int idNo, LocalDate dateOfBirth, Organisation org, Psychologist psychologist) {
+    public Patient(String firstName, String lastName, int idNo, LocalDate dateOfBirth, Organisation org, Psychologist psychologist) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.idNo = idNo;
